@@ -1,0 +1,4 @@
+development:
+  database: restaurant_app
+  adapter: postgresql
+  pool: 5
