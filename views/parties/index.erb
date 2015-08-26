@@ -1,0 +1,9 @@
+<h2>Tables (where Parties sit)</h2>
+
+<%@parties.each do |table|%>
+  <a href="/parties/<%=table.id%>">
+    <div class="tables four columns">
+      <%=table.table_number%>
+    </div>
+  </a>
+<%end%>

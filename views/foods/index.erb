@@ -1,0 +1,21 @@
+<h2>Foods</h2>
+<ul>
+  <%@foods.each do |food|%>
+  <li>
+  Name: <%=food.name%> <br>
+  Type: <%=food.cuisine_type%><br>
+  Price: $<%=food.price%><br>
+  Allergens: <%=food.allergens%><br>
+  More Info: <%=food.more_info%><br>
+  </li>
+  <%end%>
+</ul>
+
+
+<!-- create_table "foods", force: :cascade do |t|
+  t.string  "name"
+  t.string  "cuisine_type"
+  t.decimal "price"
+  t.string  "allergens"
+  t.text    "more_info"
+end -->

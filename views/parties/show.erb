@@ -1,0 +1,27 @@
+<h2>Table Number: <%=@party.table_number%></h2>
+<a href="/parties/<%=@party.id%>/edit">edit party</a>
+
+Number of guests: <%=@party.guest_count%>
+
+
+<h4>Orders by this party</h4>
+<ul>
+<%@orders.each do |order|%>
+<li>
+
+<%=order.food.name%>
+<form action="/orders/<%=order.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+
+  <button type="submit">Remove</button>
+
+</form>
+</li>
+<%end%>
+</ul>
+
+
+<!-- <a href="orders/new?party[id]=3">new order</a> -->
+<a href="/../orders">Show me ALL the orders</a> <br>
+
+<a href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">new order</a>

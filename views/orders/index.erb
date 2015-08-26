@@ -1,0 +1,11 @@
+<h3>all the orders</h3>
+<a href="/parties">Show All Tables</a>
+<ul>
+
+
+  <%@orders.each do |order|%>
+    <li>
+      food id:<%=order.food.name%>   Party id: <%=order.party_id%>
+    </li>
+  <%end%>
+</ul>

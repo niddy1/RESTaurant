@@ -16,7 +16,7 @@ require './controllers/foods_controller'
 
 #ROUTING
 
-map('/parties' ){ run PartieControllers }
-map('/orders' ){ run OrdersControllers }
-map('/foods' ){ run FoodsControllers }
-map('/' ){ run WelcomeControllers }
+map('/parties' ){ run PartiesController }
+map('/orders' ){ run OrdersController }
+map('/foods' ){ run FoodsController }
+map('/' ){ run WelcomeController }

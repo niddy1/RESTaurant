@@ -1,0 +1,13 @@
+<h2>Create a party</h2>
+<form action="/parties" method="post">
+  <input type="text" name="party[table_number]" placeholder="what table are they seated?">
+  <input type="text" name="party[guest_count]" placeholder="how many guests?">
+  
+  <input type="submit">
+</form>
+
+<!--
+create_table :parties do |t|
+  t.integer :table_number
+  t.integer :guest_count
+  t.boolean :paid -->

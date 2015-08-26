@@ -1,0 +1,8 @@
+class GuestsController < ApplicationController
+
+
+
+
+
+
+end

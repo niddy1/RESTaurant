@@ -1,0 +1,15 @@
+
+<h3>place an order</h3>
+<%@foods.each do |food|%>
+    <form class="food-list" action="/orders" method="post">
+        <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+        <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+        <button type="submit"><%= food.name %></button>
+    </form>
+<%end%>
+
+
+
+
+
+</form>
