@@ -2,7 +2,7 @@ class PartiesController < ApplicationController
 
 #INDEX
   get '/' do
-    @parties = Party.where(paid: [false, nil])
+    @parties = Party.where(paid: [false, nil]).order("table_number")
     erb :'parties/index'
   end
 

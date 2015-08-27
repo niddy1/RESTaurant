@@ -1,11 +1,19 @@
 <h3>all the orders</h3>
 <a href="/parties">Show All Tables</a>
 <ul>
-
+<%=%>
 
   <%@orders.each do |order|%>
     <li>
-      food id:<%=order.food.name%>   Party id: <%=order.party_id%>
-    </li>
+      NAME: <%=order.food.name%>   Party id: <%=order.party_id%>
+      <li  class="order-time"><%=Time.now - order.created_at%></li>
+          </li>
+
+<form action="/orders/<%=order.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="order[complete]" value="TRUE">
+  <input type="submit" value="complete">
+</form>
+
   <%end%>
 </ul>
