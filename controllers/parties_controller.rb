@@ -28,6 +28,13 @@ class PartiesController < ApplicationController
     erb :'/parties/show'
   end
 
+  #show receipt
+  get '/:id/receipt' do
+    @party= Party.find(params[:id])
+    @orders = Order.where(party_id: params[:id])
+    erb :'/parties/receipt'
+  end
+
 
 #EDIT guest_count
   get '/:id/edit' do

@@ -4,6 +4,7 @@
     <form class="food-list" action="/orders" method="post">
         <input type="hidden" name="order[food_id]" value="<%= food.id %>">
         <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+        <input type="text" name="order[description]" placeholder="special request">
         <button type="submit"><%= food.name %></button>
     </form>
 <%end%>

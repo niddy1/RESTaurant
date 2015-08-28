@@ -5,7 +5,14 @@
 
   <%@orders.each do |order|%>
     <li>
-      NAME: <%=order.food.name%>   Party id: <%=order.party_id%>
+      NAME: <%=order.food.name%>
+
+
+        <%=order.description%>
+
+
+      Table: #<%=order.party.table_number%>
+
       <li  class="order-time"><%=Time.now - order.created_at%></li>
           </li>
 

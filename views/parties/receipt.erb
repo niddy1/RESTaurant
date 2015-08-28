@@ -1,22 +1,14 @@
-<h2>Table Number: <%=@party.table_number%></h2>
-<a href="/parties/<%=@party.id%>/edit">edit party</a>
+<h2>Receipt</h2>
 
-Number of guests: <%=@party.guest_count%>
-
-
-<h4>Orders by this party</h4>
+Party size: <%=@party.guest_count%>
+<h5>Orders:</h5>
 <ul>
   <%@orders.each do |order|%>
     <li>
 
-      <%=order.food.name%>
-      <%=order.description%>
+      <%=order.food.name%>..................
       $<%=order.food.price%>
 
-      <form action="/orders/<%=order.id%>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit">Remove</button>
-      </form>
     </li>
   <%end%>
 </ul>
@@ -36,6 +28,5 @@ Order Total: <%='%.2f' % total%> <br>
 <!-- <a href="orders/new?party[id]=3">new order</a> -->
 <a href="/parties">Back to tables</a><br>
 <a href="/../orders">Show me ALL the orders</a> <br>
-<a href="/parties/<%=@party.id%>/receipt">receipt</a>
 
 <a href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">new order</a>
