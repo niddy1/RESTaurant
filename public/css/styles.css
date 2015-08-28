@@ -11,3 +11,8 @@
 .kitchen-yellow{
   background-color: yellow;
 }
+
+
+.occupied{
+  background-color: lightblue;
+}

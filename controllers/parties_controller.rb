@@ -3,16 +3,28 @@ class PartiesController < ApplicationController
 #INDEX
   get '/' do
     @parties = Party.where(paid: [false, nil]).order("table_number")
+    parties = Party.where(paid: [true]).order("table_number").update_all(table_number: 0)
+
     erb :'parties/index'
+  end
+
+  #NEW
+  get '/new' do
+    puts "*"*10
+    puts params
+    @party = Party.find(params[:party][:table_number])
+    party=Party.all
+    erb :'/parties/new'
   end
 
   #show
 
   get '/:id' do
     # binding.pry
-
     @party= Party.find(params[:id])
     @orders = Order.where(party_id: params[:id])
+
+    # @sumPrice=Order.where(party_id: params[:id]).sum(price)
     erb :'/parties/show'
   end
 
@@ -24,10 +36,7 @@ class PartiesController < ApplicationController
   end
 
 
-  #NEW
-  get '/new' do
-    erb :'/parties/new'
-  end
+
 
   #CREATE
   post '/' do

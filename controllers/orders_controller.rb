@@ -1,8 +1,13 @@
 class OrdersController < ApplicationController
 
   get '/' do
-
-    @orders = Order.where(complete: [false, nil])
+    @open_orders = Order.where(complete:[nil])
+    @orders = []
+    @open_orders.map do |order|
+      if order.party.paid == nil
+        @orders.push(order)
+      end
+    end
     erb :'orders/index'
   end
 

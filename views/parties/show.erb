@@ -10,18 +10,38 @@ Number of guests: <%=@party.guest_count%>
 <li>
 
 <%=order.food.name%>
+<%=order.food.price%>
+
 <form action="/orders/<%=order.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
 
   <button type="submit">Remove</button>
 
+<div class="blue">
+  <div class="red">
+
+  </div>
+
+</div>
 </form>
 </li>
 <%end%>
 </ul>
 
 
+<%total = 0%>
+<%@orders.each do |order|%>
+<%total += order.food.price%>
+<%end%>
+-------------------------------<br>
+Order Total: <%='%.2f' % total%> <br>
+15% Tip: <%='%.2f' % (total * 1.15)%><br>
+20% Tip: <%='%.2f' % (total * 1.20)%><br>
+25% Tip: <%='%.2f' % (total * 1.25)%><br>
+
+
 <!-- <a href="orders/new?party[id]=3">new order</a> -->
+<a href="/parties">Back to tables</a><br>
 <a href="/../orders">Show me ALL the orders</a> <br>
 
 <a href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">new order</a>
