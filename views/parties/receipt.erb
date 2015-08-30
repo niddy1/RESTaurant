@@ -1,13 +1,24 @@
-<h1 class="receipt-header">Receipt</h1>
-<br>
-Party size: <%=@party.guest_count%>
-<h5>Orders:</h5>
-<ul>
-  <%@orders.each do |order|%>
-    <li>
 
-      <%=order.food.name%>..................
-      $<%=order.food.price%>
+<div class="row receipt-header">
+
+
+<a class="col-xs-1 receipt-back btn-primary btn-lg print-button glyphicon glyphicon-menu-left" href="/parties/<%=@party.id%>"> </a>
+<h1 class="receipt-header col-xs-4">Receipt</h1>
+</div>
+
+<br>
+<span class="party-size-receipt">Party size: <%=@party.guest_count%></span>
+Server: Dez <br>
+Date: <%= Time.now.strftime("%m/%d/%Y - %I:%M%p") %> <br>
+-------------------------------<br>
+
+<ul class="receipt-order-list">
+  <%@orders.each do |order|%>
+    <li class="row">
+<span class="col-xs-8"><%=order.food.name%></span>
+<span class="col-xs-4">$<%=order.food.price%></span>
+
+
 
     </li>
   <%end%>
@@ -19,14 +30,21 @@ Party size: <%=@party.guest_count%>
   <%total += order.food.price%>
 <%end%>
 -------------------------------<br>
-Order Total: <%='%.2f' % total%> <br> <br>
+<div class="row">
+  <span class="tip col-xs-8"> Order Total: </span>
+  <span class="tip col-xs-4">$<%='%.2f' % total%></span>
+
+</div>
+<br> <br>
 Gratuity:<br>
- <span class="tip">15%=</span><%='%.2f' % (total * 0.15)%>
-<span class="tip">20%=</span> <%='%.2f' % (total * 0.20)%>
-<span class="tip">25%=</span> <%='%.2f' % (total * 0.25)%><br>
+<span class="tip">15%=</span>$<%='%.2f' % (total * 0.15)%>
+<span class="tip">20%=</span> $<%='%.2f' % (total * 0.20)%>
+<span class="tip">25%=</span> $<%='%.2f' % (total * 0.25)%><br>
 
 
 <!-- <a href="orders/new?party[id]=3">new order</a> -->
 <div class="center-block">
+
   <button class="btn-primary btn-lg print-button" type="button" name="button">Print</button>
+  <button class="btn-primary btn-lg print-button" type="button" name="button">Email</button>
 </div>

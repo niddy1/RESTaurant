@@ -1,22 +1,31 @@
-.tables{
-  border-radius: 50%;
-  height: 25vw;
-  border: 1.6px black solid;
-  margin: 5px;
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 3.3em;
+.tables {
+    border-radius: 20%;
+    height: 25vw;
+    border: 1.6px black solid;
+    margin: 12px;
+    margin-bottom: 7%;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 3.3em;
 }
 .occupied{
   background-color: rgb(203, 203, 203);
 }
 
 .kitchen-red{
-  background-color: #BD0101;
+  background-color: #f74848;
 }
 .kitchen-yellow{
   background-color: yellow;
 }
+.kitchen-green{
+  background-color: lightgreen;
+}
+.kitchen-orders{
+  padding-left: 0px;
+  border: 1px black solid;
+}
+
 
 
 
@@ -27,6 +36,7 @@
 
 .party-orders:nth-child(even){
   background-color: lightgrey;
+
 
 }
 .party-orders-table{
@@ -71,7 +81,8 @@ h1{
   width: 40%;
 }
 .food-names{
-  margin-left: -5%;
+  padding-left: 0px;
+  list-style-type: none;
 }
 
 .add-order-button {
@@ -87,4 +98,26 @@ h1{
 }
 .tip{
   font-weight: bold;
+}
+
+.receipt-back {
+    padding: 5px;
+    margin: 11px -7px 0px 3px;
+
+}
+.receipt-order-list{
+  list-style-type: none;
+  padding-left:0;
+}
+
+.receipt-header{
+  margin-bottom: -20px;
+}
+
+.party-size-receipt{
+  margin-left: 60%;
+}
+
+.party-edit-header{
+  margin-bottom: 10px;
 }

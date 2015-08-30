@@ -1,4 +1,17 @@
-<h2>Party edit</h2>
+
+
+
+
+
+
+<div class="row party-edit-header">
+
+
+<a class="col-xs-1 receipt-back btn-primary btn-lg print-button glyphicon glyphicon-menu-left" href="/parties/<%=@party.id%>"> </a>
+<h1 class="col-xs-10">Party Edit</h1>
+</div>
+
+
 
 
 <form action="/parties/<%=@party.id%>" method="post">
@@ -13,5 +26,8 @@
       <input  type="checkbox" name="party[paid]" value="TRUE"> Bill paid?
     </label>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <div class="center-block">
+<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+  </div>
+
 </form>
