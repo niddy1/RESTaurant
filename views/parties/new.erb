@@ -1,11 +1,22 @@
-<h2>Create a party</h2>
-<form action="/parties" method="post">
-  <input type="text" name="party[table_number]" value="<%=params[:party][:table_number]%>">
-  <input type="text" name="party[guest_count]" placeholder="how many guests?">
+<h1>Create Party</h1>
 
-  <input type="submit">
+<br>
+
+
+<form class="form"  action="/parties" method="post">
+
+  <div class="form-group">
+    <label >Table Number</label>
+    <input class="form-control" type="text" name="party[table_number]" value="<%=params[:party][:table_number]%>">
+  </div>
+  <div class="form-group">
+    <label >Guest Count</label>
+    <input class="form-control" type="text" name="party[guest_count]" placeholder="How many guests?">
+  </div>
+
+
+  <button type="submit" class="btn btn-default create-button">Submit</button>
 </form>
-
 <!--
 create_table :parties do |t|
   t.integer :table_number

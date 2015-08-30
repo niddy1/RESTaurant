@@ -48,7 +48,7 @@ class PartiesController < ApplicationController
   #CREATE
   post '/' do
     party = Party.create(params[:party])
-    redirect '/parties'
+    redirect "/parties/#{party.id}"
   end
 
 
@@ -57,7 +57,7 @@ class PartiesController < ApplicationController
   put '/:id' do
     party = Party.find(params[:id])
     party.update(params[:party])
-    redirect "/parties/#{party.id}"
+    redirect "/parties"
   end
 
 

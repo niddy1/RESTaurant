@@ -1,41 +1,42 @@
-<h2>Table Number: <%=@party.table_number%></h2>
-<a href="/parties/<%=@party.id%>/edit">edit party</a>
 
-Number of guests: <%=@party.guest_count%>
+<div class="row">
+
+  <h2 class="col-xs-9">Table: <%=@party.table_number%></h2>
+
+  <a class="col-xs-3 btn-primary btn-lg order-button" href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">+Order</a>
 
 
-<h4>Orders by this party</h4>
-<ul>
+
+
+</div>
+Number of guests: <%=@party.guest_count%><br>
+<a href="/parties/<%=@party.id%>/edit?party[guest_count]">Edit / Checkout</a><br>
+
+
+
+
+
+<ul class="party-orders-table list-group-item ">
   <%@orders.each do |order|%>
-    <li>
+    <li class="row list-group-item party-orders">
+      <span class="food-names col-xs-7"><%=order.food.name%></span>
 
-      <%=order.food.name%>
-      <%=order.description%>
-      $<%=order.food.price%>
-
-      <form action="/orders/<%=order.id%>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit">Remove</button>
-      </form>
+      <span class="col-xs-3">$<%=order.food.price%></span>
+      <span  class="col-xs-1">
+        <form action="/orders/<%=order.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button class="btn btn-default remove-order-button" type="submit">-</button>
+        </form>
+      </span>
     </li>
   <%end%>
 </ul>
 
-
-<%total = 0%>
-<%@orders.each do |order|%>
-  <%total += order.food.price%>
-<%end%>
--------------------------------<br>
-Order Total: <%='%.2f' % total%> <br>
-15% Tip: <%='%.2f' % (total * 1.15)%><br>
-20% Tip: <%='%.2f' % (total * 1.20)%><br>
-25% Tip: <%='%.2f' % (total * 1.25)%><br>
-
-
 <!-- <a href="orders/new?party[id]=3">new order</a> -->
-<a href="/parties">Back to tables</a><br>
-<a href="/../orders">Show me ALL the orders</a> <br>
-<a href="/parties/<%=@party.id%>/receipt">receipt</a>
+<div class="row">
 
-<a href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">new order</a>
+
+<div class="col-md-4 center-block">
+<a class="receipt-button btn-primary btn-lg" href="/parties/<%=@party.id%>/receipt">receipt</a>
+</div>
+</div>

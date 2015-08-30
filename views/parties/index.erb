@@ -1,17 +1,19 @@
-<h2>Tables (where Parties sit)</h2>
+<h1 class="table-header">Tables</h1>
 
 <% (1..9).to_a.each do |table|%>
 
   <% if (party=Party.find_by(table_number: table))  %>
 
     <a href="/parties/<%= party.id %>?party[table_number]=<%=table%>">
-      <div class="occupied tables four columns"><%=table%></div>
+      <div class="occupied tables col-xs-3">
+        <span class="glyphicon glyphicon-user"></span>
+        </div>
     </a>
 
   <% else  %>
 
     <a href="/parties/new?party[table_number]=<%=table%>">
-      <div class="tables four columns"><%=table%></div>
+      <div class="tables col-xs-3"><%=table%></div>
     </a>
 
   <% end %>

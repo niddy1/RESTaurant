@@ -1,17 +1,17 @@
 <h2>Party edit</h2>
+
+
 <form action="/parties/<%=@party.id%>" method="post">
   <input type="hidden" name="_method" value="put">
-  <!-- <input type="text" name="party[guest_count]" value="..guest_count"> -->
-How many guests:  <select name="party[guest_count]">
-     <%(1..10).each do |num|%>
-      <option value="<%=num%>">
-        <%=num%>
-      </option>
-    <%end%>
-    <br>
-    <input type="checkbox" name="party[paid]" value="TRUE"> Bill paid?
-  </select>
-<br>
-  <input type="submit">
+  <div class="form-group">
+    <label >Guess Count:</label>
+    <input type="text" class="form-control" name="party[guest_count]" value="<%=@party.guest_count%>">
+  </div>
 
+  <div class="checkbox">
+    <label>
+      <input  type="checkbox" name="party[paid]" value="TRUE"> Bill paid?
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>

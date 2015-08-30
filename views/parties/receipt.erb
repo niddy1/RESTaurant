@@ -1,5 +1,5 @@
-<h2>Receipt</h2>
-
+<h1 class="receipt-header">Receipt</h1>
+<br>
 Party size: <%=@party.guest_count%>
 <h5>Orders:</h5>
 <ul>
@@ -19,14 +19,14 @@ Party size: <%=@party.guest_count%>
   <%total += order.food.price%>
 <%end%>
 -------------------------------<br>
-Order Total: <%='%.2f' % total%> <br>
-15% Tip: <%='%.2f' % (total * 1.15)%><br>
-20% Tip: <%='%.2f' % (total * 1.20)%><br>
-25% Tip: <%='%.2f' % (total * 1.25)%><br>
+Order Total: <%='%.2f' % total%> <br> <br>
+Gratuity:<br>
+ <span class="tip">15%=</span><%='%.2f' % (total * 0.15)%>
+<span class="tip">20%=</span> <%='%.2f' % (total * 0.20)%>
+<span class="tip">25%=</span> <%='%.2f' % (total * 0.25)%><br>
 
 
 <!-- <a href="orders/new?party[id]=3">new order</a> -->
-<a href="/parties">Back to tables</a><br>
-<a href="/../orders">Show me ALL the orders</a> <br>
-
-<a href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">new order</a>
+<div class="center-block">
+  <button class="btn-primary btn-lg print-button" type="button" name="button">Print</button>
+</div>

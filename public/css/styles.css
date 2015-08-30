@@ -1,18 +1,90 @@
 .tables{
   border-radius: 50%;
-  background-color: brown;
-  width: 80px;
-  height: 80px;
+  height: 25vw;
+  border: 1.6px black solid;
+  margin: 5px;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 3.3em;
+}
+.occupied{
+  background-color: rgb(203, 203, 203);
 }
 
 .kitchen-red{
-  background-color: red;
+  background-color: #BD0101;
 }
 .kitchen-yellow{
   background-color: yellow;
 }
 
 
-.occupied{
-  background-color: lightblue;
+
+
+.order-time{
+  display: none;
+}
+
+.party-orders:nth-child(even){
+  background-color: lightgrey;
+
+}
+.party-orders-table{
+  margin-bottom: 1%;
+}
+
+.center-block {
+    text-align: center;
+    margin: 20px;
+}
+
+.order-button{
+  margin-top: 5%;
+  padding: 2.5%;
+      margin-left: -5%;
+}
+.remove-order-button{
+  font-size: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.create-party-form {
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+body{
+  font-family: 'Lora', serif;
+  font-size: 17px;
+}
+.create-button{
+  margin-bottom: 20px;
+}
+h1{
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.table-header{
+  margin-bottom: 10px;
+}
+.special-request{
+  width: 40%;
+}
+.food-names{
+  margin-left: -5%;
+}
+
+.add-order-button {
+    font-size: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 15px;
+}
+
+.print-button {
+
+  padding: 8px;
+}
+.tip{
+  font-weight: bold;
 }
