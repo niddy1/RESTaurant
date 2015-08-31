@@ -1,17 +1,35 @@
-<h2>Foods</h2>
-<ul>
-  <%@foods.each do |food|%>
-  <li>
-  Name: <%=food.name%> <br>
-  Type: <%=food.cuisine_type%><br>
-  Price: $<%=food.price%><br>
-  Allergens: <%=food.allergens%><br>
-  More Info: <%=food.more_info%><br>
-  <a href="/foods/<%=food.id%>/edit">Edit</a>
-  </li>
 
+<div class="row">
+
+  <h1 class="col-xs-9">Menu</h1>
+
+  <a class="col-xs-3 btn-primary btn-lg new-food-button" href="foods/new">+ Item</a>
+
+
+
+
+</div>
+
+
+<ul class="party-orders-table list-group-item ">
+  <%@foods.each do |food|%>
+    <li class="row list-group-item party-orders">
+      <span class="food-names col-xs-9">  Name: <%=food.name%> <br>
+        Type: <%=food.cuisine_type%><br>
+        Price: $<%=food.price%><br></span>
+
+      <span class="col-xs-3">
+      <a class="btn btn-default "href="/foods/<%=food.id%>/edit">Edit</a>
+      </span>
+      </li>
+        </form>
+      </span>
+    </li>
   <%end%>
 </ul>
+
+
+
 
 
 <!-- create_table "foods", force: :cascade do |t|

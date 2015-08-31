@@ -1,11 +1,23 @@
-<h2>edit a food</h2>
+<h1 class="table-header">Edit Food</h1>
+
 
 <form action="/foods/<%=@food.id%>" method="post">
   <input type="hidden" name="_method" value="put">
-  <input type="text" name="food[name]" value="<%=@food.name%>">
-  <input type="text" name="food[cuisine_type]" value="<%=@food.cuisine_type%>">
-  <input type="text" name="food[price]" value="<%=@food.price%>">
-  <input type="text" name="food[allergens]" value="<%=@food.allergens%>">
-  <input type="text" name="food[more_info]" value="<%=@food.more_info%>">
-  <input type="submit" value="Update">
+  <div class="form-group">
+    <label >Name:</label>
+    <input type="text" class="form-control" name="food[name]" value="<%=@food.name%>">
+  </div>
+  <div class="form-group">
+    <label >Type:</label>
+    <input type="text" class="form-control" name="food[cuisine_type]" value="<%=@food.cuisine_type%>">
+  </div>
+  <div class="form-group">
+    <label >Price:</label>
+    <input type="text" class="form-control" name="food[price]" value="<%=@food.price%>">
+  </div>
+
+  <div class="center-block">
+<button type="submit" class="btn btn-primary btn-lg">Update</button>
+  </div>
+
 </form>
