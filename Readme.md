@@ -31,7 +31,7 @@ RestaurantApp is opitimized for iPhone and Android devices.
 <img width="250px" src="/public/css/images/photo 2.PNG">
 </div>
 <div style="text-align:center;">
-<img width="450px" src="/public/css/images/kitchen.PNG">
+<img width="450px" src="/public/css/images/kitchen.png">
 </div>
 
 
