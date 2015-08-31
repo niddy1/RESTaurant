@@ -1,7 +1,7 @@
 ## RestaurantApp
 A mobile-first restaurant application to manage orders, tables and menu items.
 RestaurantApp is opitimized for iPhone and Android devices.
-![](http://i.imgur.com/WH5NYUE.jpg)
+![]()
 
 ## User Story
 - Server is given clear visual representation of available/occupied tables for faster more efficient server.
