@@ -17,29 +17,11 @@ class OrdersController < ApplicationController
     erb :'/orders/new'
   end
 
-
-
-
   put '/:id' do
     order = Order.find(params[:id])
     order.update(params[:order])
     redirect '/orders'
   end
-
-  # #EDIT guest_count
-  #   get '/:id/edit' do
-  #     @party = Party.find(params[:id])
-  #     erb :"/parties/edit"
-  #   end
-  #
-  #
-  #   #update
-  #
-  #   put '/:id' do
-  #     party = Party.find(params[:id])
-  #     party.update(params[:party])
-  #     redirect "/parties/#{party.id}"
-  #   end
 
   post '/' do
     order = Order.create(params[:order])
@@ -57,6 +39,4 @@ class OrdersController < ApplicationController
     order.delete()
     redirect "/parties/#{order.party_id}"
   end
-
-
 end

@@ -1,27 +1,26 @@
 
 <div class="row">
-
-  <h1 class="col-xs-9">Table: <%=@party.table_number%></h1>
-
+  <h1 class="col-xs-9">
+    Table: <%=@party.table_number%>
+  </h1>
   <a class="col-xs-3 btn-primary btn-lg order-button" href="/../orders/new?party[id]=<%=@party.id%>&party[guest_count]=<%=@party.guest_count%>">+ Order</a>
-
-
-
-
 </div>
-Number of guests: <%=@party.guest_count%><br>
-<a href="/parties/<%=@party.id%>/edit?party[guest_count]">Edit / Checkout</a><br>
 
-
-
-
+Number of guests: <%=@party.guest_count%>
+<br>
+<a href="/parties/<%=@party.id%>/edit?party[guest_count]">Edit / Checkout</a>
+<br>
 
 <ul class="party-orders-table list-group-item ">
   <%@orders.each do |order|%>
     <li class="row list-group-item party-orders">
-      <span class="food-names col-xs-7"><%=order.food.name%></span>
+      <span class="food-names col-xs-7">
+        <%=order.food.name%>
+      </span>
 
-      <span class="col-xs-3">$<%=order.food.price%></span>
+      <span class="col-xs-3">
+        $<%=order.food.price%>
+      </span>
       <span  class="col-xs-1">
         <form action="/orders/<%=order.id%>" method="post">
           <input type="hidden" name="_method" value="delete">
@@ -34,9 +33,7 @@ Number of guests: <%=@party.guest_count%><br>
 
 <!-- <a href="orders/new?party[id]=3">new order</a> -->
 <div class="row">
-
-
-<div class="col-md-4 center-block">
-<a class="receipt-button btn-primary btn-lg" href="/parties/<%=@party.id%>/receipt">receipt</a>
-</div>
+  <div class="col-md-4 center-block">
+    <a class="receipt-button btn-primary btn-lg" href="/parties/<%=@party.id%>/receipt">receipt</a>
+  </div>
 </div>

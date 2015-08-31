@@ -4,19 +4,16 @@
 <ul class="new-orders-table list-group-item ">
   <%@foods.each do |food|%>
     <li class="row list-group-item party-orders">
-      <span class="food-names col-xs-5"><%=food.name%></span>
-
-
-
-
-
-        <form class="food-list " action="/orders" method="post">
-            <input type="hidden" name="order[food_id]" value="<%= food.id %>">
-            <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
-            <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
-            <button class="btn btn-default add-order-button col-xs-2"type="submit">+</button>
-        </form>
+      <span class="food-names col-xs-5">
+        <%=food.name%>
       </span>
+
+      <form class="food-list " action="/orders" method="post">
+          <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+          <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+          <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
+          <button class="btn btn-default add-order-button col-xs-2"type="submit">+</button>
+      </form>
     </li>
   <%end%>
 </ul>

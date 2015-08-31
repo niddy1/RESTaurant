@@ -1,33 +1,24 @@
 <h2>Kitchen Checks</h2>
 <ul class="list-group-item ">
 
-  <%@orders.each do |order|%>
-    <li class="row list-group-item kitchen-orders">
-      <span class="col-xs-5"><%=order.food.name%> <br>
-      <span >  Table:<%=order.party.table_number%></span>
+<%@orders.each do |order|%>
+  <li class="row list-group-item kitchen-orders">
+    <span class="col-xs-5"><%=order.food.name%> <br>
+      <span >
+        Table:<%=order.party.table_number%>
       </span>
+    </span>
 
+    <span class="col-xs-5">
+      <%=order.description%>
+    </span>
+    <p class="order-time"><%=Time.now - order.created_at%></p>
 
-<span class="col-xs-5">
-        <%=order.description%>
-        </span>
-
-
-        <p  class="order-time"><%=Time.now - order.created_at%>
-        </p>
-
-
-
-
-  <form class=""action="/orders/<%=order.id%>" method="post">
-    <input type="hidden" name="_method" value="put">
-    <input type="hidden" name="order[complete]" value="TRUE">
-    <button class="btn btn-default btn-lg"  type="submit">Complete</button>
-  </form>
-
-
-</li>
-
-
+    <form class=""action="/orders/<%=order.id%>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="hidden" name="order[complete]" value="TRUE">
+      <button class="btn btn-default btn-lg"  type="submit">Complete</button>
+    </form>
+  </li>
   <%end%>
 </ul>

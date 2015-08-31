@@ -20,11 +20,8 @@ class PartiesController < ApplicationController
   #show
 
   get '/:id' do
-    # binding.pry
     @party= Party.find(params[:id])
     @orders = Order.where(party_id: params[:id])
-
-    # @sumPrice=Order.where(party_id: params[:id]).sum(price)
     erb :'/parties/show'
   end
 
@@ -35,15 +32,11 @@ class PartiesController < ApplicationController
     erb :'/parties/receipt'
   end
 
-
 #EDIT guest_count
   get '/:id/edit' do
     @party = Party.find(params[:id])
     erb :"/parties/edit"
   end
-
-
-
 
   #CREATE
   post '/' do
@@ -51,18 +44,10 @@ class PartiesController < ApplicationController
     redirect "/parties/#{party.id}"
   end
 
-
   #update
-
   put '/:id' do
     party = Party.find(params[:id])
     party.update(params[:party])
     redirect "/parties"
   end
-
-
-
-
-
-
 end
