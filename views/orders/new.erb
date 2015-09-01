@@ -1,19 +1,123 @@
 
 <h3>Place An Order</h3>
 
-<ul class="new-orders-table list-group-item ">
-  <%@foods.each do |food|%>
-    <li class="row list-group-item party-orders">
-      <span class="food-names col-xs-5">
-        <%=food.name%>
-      </span>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" style="background-color:lightgrey;"role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="order-dropdown-links"role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          App
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
 
-      <form class="food-list " action="/orders" method="post">
-          <input type="hidden" name="order[food_id]" value="<%= food.id %>">
-          <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
-          <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
-          <button class="btn btn-default add-order-button col-xs-2"type="submit">+</button>
-      </form>
-    </li>
-  <%end%>
-</ul>
+        <ul class="new-orders-table list-group-item ">
+          <%@app.each do |food|%>
+            <li class="row list-group-item party-orders">
+              <span class="food-names col-xs-5">
+                <%=food.name%>
+              </span>
+
+              <form class="food-list " action="/orders" method="post">
+                  <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+                  <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+                  <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
+                  <button class="btn btn-primary add-order-button col-xs-2"type="submit">+</button>
+              </form>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed order-dropdown-links" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Sandwich
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <ul class="new-orders-table list-group-item ">
+          <%@sandwich.each do |food|%>
+            <li class="row list-group-item party-orders">
+              <span class="food-names col-xs-5">
+                <%=food.name%>
+              </span>
+
+              <form class="food-list " action="/orders" method="post">
+                  <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+                  <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+                  <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
+                  <button class="btn btn-primary add-order-button col-xs-2"type="submit">+</button>
+              </form>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" style="background-color:lightgrey;" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed order-dropdown-links" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Side
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <ul class="new-orders-table list-group-item ">
+          <%@side.each do |food|%>
+            <li class="row list-group-item party-orders">
+              <span class="food-names col-xs-5">
+                <%=food.name%>
+              </span>
+
+              <form class="food-list " action="/orders" method="post">
+                  <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+                  <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+                  <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
+                  <button class="btn btn-primary add-order-button col-xs-2"type="submit">+</button>
+              </form>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed order-dropdown-links" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+          Drink
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        <ul class="new-orders-table list-group-item ">
+          <%@drink.each do |food|%>
+            <li class="row list-group-item party-orders">
+              <span class="food-names col-xs-5">
+                <%=food.name%>
+              </span>
+
+              <form class="food-list " action="/orders" method="post">
+                  <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+                  <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+                  <input type="text" class="special-request col-xs-2"name="order[description]" placeholder="special?">
+                  <button class="btn btn-primary add-order-button col-xs-2"type="submit">+</button>
+              </form>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

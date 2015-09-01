@@ -14,6 +14,11 @@ class OrdersController < ApplicationController
   get '/new' do
     @foods = Food.all
     @party = Party.find(params[:party][:id])
+
+    @app = Food.where(cuisine_type:['App'])
+    @sandwich = Food.where(cuisine_type:['Sandwich'])
+    @side = Food.where(cuisine_type:['Side'])
+    @drink = Food.where(cuisine_type:['Drink'])
     erb :'/orders/new'
   end
 
