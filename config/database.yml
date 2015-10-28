@@ -2,3 +2,7 @@ development:
   database: restaurant_app
   adapter: postgresql
   pool: 5
+
+production:
+  adapter: postgresql
+  database: restaurant_app
